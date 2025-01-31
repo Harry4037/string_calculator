@@ -16,5 +16,9 @@ describe("String Calculator", () => {
   it("return the sum for multiple numbers", () => {
     expect(add("1,2,3,4")).toBe(10);
   });
+
+  it("throw error when a non numeric number is encountered", () => {
+    expect(() => add("1,abc,2")).toThrow("non numeric value not allowed: abc");
+  });
   
 });

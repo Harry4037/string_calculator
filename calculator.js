@@ -9,6 +9,8 @@ const add = (input) => {
     .reduce((total, num) => total + num);
 };
 
+
+
 module.exports = {
   add,
 };
