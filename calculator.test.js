@@ -22,7 +22,7 @@ describe("String Calculator", () => {
   });
 
   it("allow newline as a separator", () => {
-    expect(add("1\n2,3,4,\n5")).toBe(15);
+    expect(add("1\n2,3,4\n5")).toBe(15);
   });
-  
+
 });
