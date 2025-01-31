@@ -20,6 +20,13 @@ const add = (input) => {
 };
 
 function sum(input, delimeter) {
+    
+  const negativeNumbers = input.split(delimeter).filter((num) => num < 0);
+  if (negativeNumbers.length > 0) {
+    throw new Error(
+      `Negative numbers not allowed: ${negativeNumbers.join(",")}`
+    );
+  }
   //return the sum of numbers
   return input
     .split(delimeter)
