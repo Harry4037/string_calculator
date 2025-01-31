@@ -4,7 +4,7 @@
   "description": "String calculator TDD Kata",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Harry4037/string_calculator/issues"
   },
-  "homepage": "https://github.com/Harry4037/string_calculator#readme"
+  "homepage": "https://github.com/Harry4037/string_calculator#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
