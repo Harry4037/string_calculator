@@ -10,23 +10,28 @@ const add = (input) => {
     return sum(inputStr, delimeter);
   }
 
-  //throw if non numeric number encontered
-  const notNumbers = input.split(/[\n,]/).filter((num) => isNaN(parseInt(num)));
-  if (notNumbers.length > 0) {
-    throw new Error(`non numeric value not allowed: ${notNumbers.join(",")}`);
-  }
-
   return sum(input, /[\n,]/);
 };
 
 function sum(input, delimeter) {
-    
+  //filtered non numeric numbers
+  const notNumbers = input
+    .split(delimeter)
+    .filter((num) => isNaN(parseInt(num)));
+  if (notNumbers.length > 0) {
+    //throw erro if non numeric number encontered
+    throw new Error(`non numeric value not allowed: ${notNumbers.join(",")}`);
+  }
+
+  //filtered negative numbers
   const negativeNumbers = input.split(delimeter).filter((num) => num < 0);
   if (negativeNumbers.length > 0) {
+    //throw error if negative number encontered
     throw new Error(
       `Negative numbers not allowed: ${negativeNumbers.join(",")}`
     );
   }
+
   //return the sum of numbers
   return input
     .split(delimeter)
